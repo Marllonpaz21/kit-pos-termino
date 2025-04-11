@@ -1,0 +1,45 @@
+import streamlit as st
+import random
+
+st.set_page_config(page_title="Kit Pós-Término 💔", layout="centered")
+
+st.title("💔 Kit de Reorganização de Vida Após um Pé na Bunda")
+st.subheader("Porque a vida continua — e você também!")
+
+st.markdown("Escolha um botão e receba algo que vai te ajudar nesse momento difícil 👇")
+
+frases = [
+    "Você não perdeu um amor, perdeu quem não te amava de verdade.",
+    "Se valorize! Você é o prêmio. 🏆",
+    "Cada término é uma chance de recomeçar mais forte.",
+    "Um dia vai doer menos. E outro dia, nem vai doer mais.",
+    "Não corra atrás de quem não ficaria por você.",
+    "Sua paz vale mais que qualquer relacionamento tóxico."
+]
+
+tarefas = [
+    "Arrume seu quarto ouvindo música alta.",
+    "Faça uma lista de 5 qualidades suas.",
+    "Bloqueie o ex — você não precisa ver o que ele(a) anda postando.",
+    "Saia pra caminhar 20 minutos, só você e seus pensamentos.",
+    "Mande um áudio pra você mesmo dizendo o quanto é foda."
+]
+
+playlists = [
+    "https://open.spotify.com/playlist/37i9dQZF1DX3rxVfibe1L0",
+    "https://open.spotify.com/playlist/37i9dQZF1DWX83CujKHHOn",
+    "https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j",
+]
+
+if st.button("🧠 Frase motivacional"):
+    st.success(random.choice(frases))
+
+if st.button("📋 Tarefa do dia"):
+    st.info(random.choice(tarefas))
+
+if st.button("🎵 Ouvir playlist"):
+    st.markdown("Abre essa no Spotify, aumenta o som e sente a vibe 🎧")
+    st.markdown(f"[Clique aqui para ouvir]({random.choice(playlists)})")
+
+st.markdown("---")
+st.caption("Feito com carinho pra quem precisa se reconstruir. Você vai ficar bem. 💛")

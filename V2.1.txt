@@ -1,0 +1,105 @@
+import streamlit as st
+import random
+
+# Configuração da página
+st.set_page_config(page_title="Kit Pós-Término 💔", layout="centered")
+
+# Emojis decorativos
+st.title("💔 Kit de Reorganização de Vida Após um Pé na Bunda")
+st.markdown("Porque a vida continua — e você também! ✨")
+
+# -------------------------
+# Frase motivacional
+# -------------------------
+st.header("🧠 Frase motivacional")
+frases = [
+    "Você não perdeu um amor, perdeu quem não te amava de verdade.",
+    "Se valorize! Você é o prêmio. 🏆",
+    "Cada término é uma chance de recomeçar mais forte.",
+    "Um dia vai doer menos. E outro dia, nem vai doer mais.",
+    "Não corra atrás de quem não ficaria por você.",
+    "Sua paz vale mais que qualquer relacionamento tóxico.",
+    "Você é incrível mesmo que alguém tenha sido cego demais pra ver isso.",
+    "Se até sua geladeira faz mais frio que ele, era hora de ir embora mesmo. 🥶",
+    "A fila anda, corre, pedala e às vezes voa. 🚲✈️",
+    "Ele te perdeu e nem sabe o tamanho da cagada que fez. 💅",
+    "Você sobreviveu a trabalhos de escola em grupo. Vai sobreviver a isso também.",
+    "Não é recaída, é só o algoritmo testando sua força. 🤖",
+    "Tem coisa melhor te esperando do que responder 'Oi sumido' 👀",
+]
+
+if st.button("Receber frase"):
+    st.success(random.choice(frases))
+
+# -------------------------
+# Checklist emocional
+# -------------------------
+st.header("✅ Checklist de Primeiros Socorros Emocionais")
+check1 = st.checkbox("Dormiu bem?")
+check2 = st.checkbox("Bebeu água hoje?")
+check3 = st.checkbox("Bloqueou a pessoa?")
+check4 = st.checkbox("Evitou stalkear?")
+
+if check1 and check2 and check3 and check4:
+    st.balloons()
+    st.success("Você tá se cuidando direitinho. Orgulho de você 💛")
+else:
+    st.info("Não tem problema... faz o possível por hoje 🫂")
+
+# -------------------------
+# Tarefa do dia
+# -------------------------
+st.header("📋 Tarefa do Dia")
+tarefas = [
+    "Arrume sua cama ouvindo uma música animada.",
+    "Saia pra caminhar 10 minutos e observe as nuvens.",
+    "Escreva 3 coisas que você ama em você.",
+    "Bloqueie o ex — você merece paz mental.",
+    "Faça algo que te fazia feliz antes desse relacionamento.",
+    "Grave um vídeo dizendo o quanto você merece ser feliz.",
+    "Mude o fundo do seu celular pra algo que te inspire.",
+    "Tome um banho demorando o dobro do tempo. E canta no chuveiro!",
+    "Escreva uma carta pro ex e depois rasgue (ou queime mentalmente).",
+    "Mande um meme pra um amigo e ria junto.",
+    "Faça uma playlist chamada: ‘Eu sou o momento’.",
+    "Coma algo que te faz feliz sem culpa nenhuma.",
+    "Desinstale qualquer app que você só baixou por causa da pessoa.",
+]
+
+if st.button("Nova tarefa"):
+    st.info(random.choice(tarefas))
+
+# -------------------------
+# Playlist
+# -------------------------
+st.header("🎧 Escolha sua vibe de hoje")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button("💔 Quero chorar"):
+        st.markdown("[Ouvir no Spotify](https://open.spotify.com/playlist/37i9dQZF1DWX83CujKHHOn)")
+
+with col2:
+    if st.button("🚀 Quero superar logo"):
+        st.markdown("[Ouvir no Spotify](https://open.spotify.com/playlist/37i9dQZF1DX3rxVfibe1L0)")
+
+# -------------------------
+# Diário terapêutico
+# -------------------------
+st.header("📓 Diário Terapêutico")
+
+diario = st.text_area("Escreve o que você tá sentindo hoje (ninguém vai ler, é só pra você)")
+
+if st.button("Salvar no coração 💌"):
+    if diario.strip() == "":
+        st.warning("Escreve um pouquinho, vai te fazer bem 💭")
+    else:
+        st.success("Prontinho! Às vezes desabafar já alivia bastante.")
+
+# -------------------------
+# Mensagem final
+# -------------------------
+st.markdown("---")
+st.markdown("💬 *Você não é o que aconteceu com você. Você é o que você faz com isso.*")
+st.caption("Feito com carinho pra quem precisa se reconstruir. Você vai ficar bem. 💛")
